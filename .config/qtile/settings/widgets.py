@@ -116,8 +116,8 @@ primary_widgets = [
 
     # Time Date
     widget.WidgetBox(**base(fg="color2"), widgets=[widget.Clock(**base(fg='color2'), 
-                                                   format='%A %d %B ')], text_closed='   ',text_open=' '),
-    widget.Clock(**base(fg='color2'), format='%I:%M %p ',
+                                                   format='%A ')], text_closed='   ',text_open=' '),
+    widget.Clock(**base(fg='color2'), format='%d/%m/%y %I:%M %p ',
     mouse_callbacks={
         # "Button1": lambda: os.system('dunstify "$(cal)"')
         }),

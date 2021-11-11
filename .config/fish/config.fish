@@ -13,7 +13,9 @@ set -gx EDITOR vim
 ## Environment setup
 
 # Add java binaries to PATH
-fish_add_path /opt/java/bin
+if test -d /opt/java/bin
+    fish_add_path /opt/java/bin
+end
 
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
