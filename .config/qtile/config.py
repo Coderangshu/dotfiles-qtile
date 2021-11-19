@@ -1,11 +1,6 @@
 # Qtile Config File
 # http://www.qtile.org/
 
-# HackMeAny
-# Email : hackme.any@protonmail.com
-# https://github.com/HackMEAny/dotfile
-
-
 from libqtile import hook
 
 from settings.keys import mod, keys

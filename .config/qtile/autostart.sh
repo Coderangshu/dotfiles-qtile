@@ -32,3 +32,8 @@ unclutter --start-hidden &
 
 # refresh pacman database
 echo -e '1998' | sudo -S pacman --noconfirm -Sy &
+
+# Update lockscreen background
+betterlockscreen -u ~/Wallpapers &
+
+cbatticon -n -c "notify-send -u critical \"Low Battery\"" &

@@ -88,6 +88,16 @@ function copy
     end
 end
 
+function lfcd
+  set tmp (mktemp)
+  lf -last-dir-path="$tmp" "$argv"
+  if [ -f "$tmp" ];
+      set dir (cat "$tmp")
+      rm -f "$tmp" >/dev/null
+      [ -d "$dir" ] && [ "$dir" != (pwd) ] && cd "$dir"
+  end
+ end
+
 ## Import colorscheme from 'wal' asynchronously
 if type "wal" >> /dev/null 2>&1
    cat ~/.cache/wal/sequences
@@ -148,6 +158,18 @@ alias track='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # lf-ueberzug alias to lf
 alias lf='lf-ueberzug'
+
+# download file using dragon
+alias dlfile='~/.config/scripts/dragon/dlfile'
+
+# copy file using dragon
+alias cpdragon='~/.config/scripts/dragon/cpdragon'
+
+# move file using dragon
+alias mvdragon='~/.config/scripts/dragon/mvdragon'
+
+# Key bindings
+bind \co lfcd
 
 # Conda initialize
 #source /home/angshuman/miniconda3/etc/fish/conf.d/conda.fish

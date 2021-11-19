@@ -41,9 +41,13 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "period", lazy.next_screen()),
     ([mod], "comma", lazy.prev_screen()),
 
+    # Lock Qtile
+    ([mod, "control"], "l", lazy.spawn("betterlockscreen -l")),
+
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),
 
+    # Shutdown Qtile
     ([mod, "control"], "q", lazy.shutdown()),
 
     # ------------ App Configs ------------
@@ -53,7 +57,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Power Menu
     # (["mod1"], "Tab", lazy.spawn(path.join(rofi_path, 'text/launcher.sh'))),
-    (["mod1"], "p", lazy.spawn(path.join(rofi_path, 'powermenu/powermenu.sh'))),
+    ([mod], "p", lazy.spawn(path.join(rofi_path, 'powermenu/powermenu.sh'))),
 
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
@@ -89,7 +93,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     )),
     # Media player controls
     ([], "XF86AudioPlay", lazy.spawn("/usr/bin/playerctl play-pause")),
-    # ([], "XF86AudioPause", lazy.spawn("/usr/bin/playerctl pause")),
     ([], "XF86AudioNext", lazy.spawn("/usr/bin/playerctl next")),
     ([], "XF86AudioPrev", lazy.spawn("/usr/bin/playerctl previous")),
 
